@@ -1,0 +1,667 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0e7c70">
+  <meta name="description" content="عوازل بعسير — حلول العزل المائي والحراري بخدمة احترافية وسريعة.">
+  <title>عوازل بعسير | حماية تدوم</title>
+  <style>
+    :root {
+      --ink: #102f35;
+      --muted: #5e7477;
+      --brand: #0e7c70;
+      --brand-dark: #07574f;
+      --mint: #d9f3eb;
+      --cream: #fffaf1;
+      --orange: #f59b4a;
+      --line: rgba(16, 47, 53, .11);
+      --shadow: 0 24px 70px rgba(15, 60, 58, .14);
+      --radius: 28px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at 4% 0%, rgba(245, 155, 74, .17), transparent 25rem),
+        radial-gradient(circle at 100% 20%, rgba(14, 124, 112, .13), transparent 27rem),
+        var(--cream);
+      font-family: Tahoma, Arial, sans-serif;
+      line-height: 1.75;
+      overflow-x: hidden;
+    }
+
+    a { color: inherit; text-decoration: none; }
+    img { display: block; max-width: 100%; }
+    .page { width: min(1140px, calc(100% - 32px)); margin: auto; }
+
+    .topbar {
+      width: 100%;
+      background: var(--brand-dark);
+      color: #eafff8;
+      font-size: .82rem;
+      letter-spacing: .01em;
+    }
+    .topbar-inner {
+      min-height: 38px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+    }
+    .topbar-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--orange);
+      box-shadow: 0 0 0 5px rgba(245,155,74,.16);
+    }
+
+    header {
+      padding: 22px 0 10px;
+      position: relative;
+      z-index: 2;
+    }
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 22px;
+    }
+    .logo {
+      display: inline-flex;
+      align-items: center;
+      gap: 11px;
+      font-weight: 900;
+      font-size: 1.08rem;
+      color: var(--brand-dark);
+    }
+    .logo-mark {
+      width: 44px;
+      height: 44px;
+      display: grid;
+      place-items: center;
+      border-radius: 15px 15px 15px 5px;
+      color: white;
+      background: linear-gradient(145deg, var(--brand), #13a38f);
+      box-shadow: 0 10px 22px rgba(14,124,112,.22);
+      transform: rotate(-6deg);
+      font-size: 1.45rem;
+    }
+    .logo-mark span { transform: rotate(6deg); }
+    nav { display: flex; align-items: center; gap: 24px; color: #47666a; font-size: .91rem; }
+    nav a { transition: color .2s ease; }
+    nav a:hover { color: var(--brand); }
+    .nav-cta {
+      padding: 10px 16px;
+      border: 1px solid rgba(14,124,112,.18);
+      border-radius: 999px;
+      color: var(--brand-dark);
+      font-weight: 800;
+    }
+
+    .hero {
+      min-height: 615px;
+      padding: 38px 0 74px;
+      display: grid;
+      grid-template-columns: minmax(0, 1.03fr) minmax(350px, .97fr);
+      align-items: center;
+      gap: 58px;
+    }
+    .hero-copy { text-align: right; }
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 12px;
+      border-radius: 999px;
+      background: var(--mint);
+      color: var(--brand-dark);
+      font-size: .78rem;
+      font-weight: 900;
+    }
+    .eyebrow::before { content: "✦"; color: var(--orange); font-size: 1rem; }
+    h1 {
+      margin: 18px 0 14px;
+      max-width: 650px;
+      font-size: clamp(2.35rem, 6vw, 4.55rem);
+      line-height: 1.17;
+      letter-spacing: -.055em;
+    }
+    h1 em { color: var(--brand); font-style: normal; }
+    .hero-copy > p {
+      max-width: 585px;
+      margin: 0;
+      color: var(--muted);
+      font-size: 1.08rem;
+    }
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 28px;
+    }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 9px;
+      min-height: 52px;
+      padding: 12px 21px;
+      border: 0;
+      border-radius: 15px;
+      font: inherit;
+      font-weight: 900;
+      cursor: pointer;
+      transition: transform .2s ease, box-shadow .2s ease, background .2s ease;
+    }
+    .btn:hover { transform: translateY(-3px); }
+    .btn-primary { color: white; background: var(--brand); box-shadow: 0 14px 28px rgba(14,124,112,.22); }
+    .btn-primary:hover { background: var(--brand-dark); }
+    .btn-light { color: var(--brand-dark); background: white; border: 1px solid var(--line); }
+    .btn-whatsapp { color: #174d3c; background: #e0f8e9; }
+    .hero-note {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-top: 22px;
+      color: #698084;
+      font-size: .84rem;
+    }
+    .mini-avatars { display: flex; direction: ltr; }
+    .mini-avatars span {
+      width: 29px;
+      height: 29px;
+      display: grid;
+      place-items: center;
+      margin-left: -7px;
+      border: 2px solid var(--cream);
+      border-radius: 50%;
+      color: white;
+      background: #b7c8bf;
+      font-size: .73rem;
+    }
+    .mini-avatars span:nth-child(2) { background: #e6a17a; }
+    .mini-avatars span:nth-child(3) { background: #7d9ba1; }
+    .mini-avatars span:nth-child(4) { background: var(--brand); }
+
+    .hero-art { position: relative; }
+    .hero-card {
+      position: relative;
+      overflow: hidden;
+      min-height: 500px;
+      border-radius: 38px 38px 38px 9px;
+      background: #cadfd7;
+      box-shadow: var(--shadow);
+      isolation: isolate;
+    }
+    .hero-card::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+      background: linear-gradient(180deg, rgba(12,52,49,.02) 35%, rgba(12,52,49,.78) 100%);
+      pointer-events: none;
+    }
+    .hero-card img {
+      width: 100%;
+      height: 100%;
+      min-height: 500px;
+      object-fit: cover;
+      object-position: 50% 50%;
+    }
+    .photo-label {
+      position: absolute;
+      z-index: 2;
+      right: 22px;
+      bottom: 22px;
+      left: 22px;
+      color: white;
+    }
+    .photo-label strong { display: block; font-size: 1.32rem; }
+    .photo-label span { color: #d7eee7; font-size: .86rem; }
+    .stamp {
+      position: absolute;
+      z-index: 3;
+      top: -18px;
+      left: -22px;
+      width: 126px;
+      height: 126px;
+      display: grid;
+      place-items: center;
+      padding: 18px;
+      border: 7px solid var(--cream);
+      border-radius: 50%;
+      color: white;
+      background: var(--orange);
+      text-align: center;
+      font-size: .78rem;
+      font-weight: 900;
+      line-height: 1.35;
+      transform: rotate(-12deg);
+      box-shadow: 0 14px 26px rgba(87,48,19,.2);
+    }
+
+    .ticker {
+      overflow: hidden;
+      color: white;
+      background: var(--brand-dark);
+    }
+    .ticker-track {
+      display: flex;
+      width: max-content;
+      padding: 13px 0;
+      animation: ticker 26s linear infinite;
+    }
+    .ticker-group { display: flex; align-items: center; }
+    .ticker-item {
+      display: inline-flex;
+      align-items: center;
+      gap: 22px;
+      padding: 0 22px;
+      white-space: nowrap;
+      font-size: .91rem;
+      font-weight: 700;
+    }
+    .ticker-item::after { content: "✦"; color: var(--orange); }
+    @keyframes ticker { to { transform: translateX(50%); } }
+
+    section { padding: 88px 0; }
+    .section-head { max-width: 610px; margin: 0 auto 38px; text-align: center; }
+    .section-kicker { color: var(--brand); font-size: .78rem; font-weight: 900; letter-spacing: .08em; }
+    h2 { margin: 8px 0 10px; font-size: clamp(1.9rem, 4vw, 3rem); line-height: 1.25; letter-spacing: -.04em; }
+    .section-head p { margin: 0; color: var(--muted); }
+
+    .service-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+    }
+    .service {
+      padding: 25px 22px;
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      background: rgba(255,255,255,.7);
+      transition: transform .2s ease, box-shadow .2s ease;
+    }
+    .service:hover { transform: translateY(-5px); box-shadow: 0 16px 32px rgba(15,60,58,.08); }
+    .service-icon {
+      width: 48px;
+      height: 48px;
+      display: grid;
+      place-items: center;
+      margin-bottom: 15px;
+      border-radius: 15px;
+      color: var(--brand-dark);
+      background: var(--mint);
+      font-size: 1.35rem;
+    }
+    .service h3 { margin: 0 0 4px; font-size: 1.08rem; }
+    .service p { margin: 0; color: var(--muted); font-size: .87rem; line-height: 1.65; }
+
+    .features-wrap {
+      display: grid;
+      grid-template-columns: .9fr 1.1fr;
+      gap: 58px;
+      align-items: center;
+    }
+    .feature-panel {
+      position: relative;
+      min-height: 380px;
+      padding: 30px;
+      overflow: hidden;
+      border-radius: 34px 10px 34px 34px;
+      color: white;
+      background: var(--brand);
+    }
+    .feature-panel::before, .feature-panel::after {
+      content: "";
+      position: absolute;
+      border-radius: 50%;
+      background: rgba(255,255,255,.1);
+    }
+    .feature-panel::before { width: 250px; height: 250px; top: -105px; left: -75px; }
+    .feature-panel::after { width: 180px; height: 180px; bottom: -65px; right: -35px; }
+    .feature-panel > * { position: relative; z-index: 1; }
+    .quote-mark { color: #8be2cf; font-size: 4rem; line-height: 1; }
+    .feature-panel p { max-width: 355px; margin: 8px 0 30px; color: #e2fff8; font-size: 1.18rem; font-weight: 700; }
+    .feature-sign { color: #a8ded3; font-size: .85rem; }
+    .feature-list { display: grid; gap: 18px; }
+    .feature {
+      display: flex;
+      align-items: flex-start;
+      gap: 15px;
+    }
+    .check {
+      flex: 0 0 31px;
+      width: 31px;
+      height: 31px;
+      display: grid;
+      place-items: center;
+      border-radius: 50%;
+      color: var(--brand);
+      background: var(--mint);
+      font-weight: 900;
+    }
+    .feature h3 { margin: 0 0 2px; font-size: 1.02rem; }
+    .feature p { margin: 0; color: var(--muted); font-size: .88rem; }
+
+    .reviews { background: #f4fbf7; }
+    .review-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+    .review {
+      padding: 23px;
+      border: 1px solid rgba(14,124,112,.1);
+      border-radius: 22px;
+      background: white;
+    }
+    .stars { color: var(--orange); letter-spacing: 3px; font-size: .93rem; }
+    .review blockquote { margin: 12px 0 20px; color: #3f5d60; font-size: .91rem; line-height: 1.9; }
+    .reviewer { display: flex; align-items: center; gap: 10px; }
+    .reviewer-avatar {
+      width: 37px;
+      height: 37px;
+      display: grid;
+      place-items: center;
+      border-radius: 50%;
+      color: white;
+      background: var(--brand);
+      font-weight: 900;
+    }
+    .reviewer strong { display: block; font-size: .84rem; }
+    .reviewer small { color: #8a9b9b; font-size: .73rem; }
+
+    .cta {
+      padding: 57px 35px;
+      border-radius: 32px;
+      color: white;
+      background:
+        linear-gradient(125deg, rgba(5,87,79,.97), rgba(14,124,112,.91)),
+        url("https://images.unsplash.com/photo-1581578731548-c64695cc6952?auto=format&fit=crop&w=1400&q=82") center/cover;
+      text-align: center;
+      box-shadow: 0 18px 48px rgba(14,124,112,.2);
+    }
+    .cta h2 { margin-top: 0; }
+    .cta p { margin: 0 auto 23px; color: #dcfff6; }
+    .cta .btn-light { border: 0; }
+
+    footer {
+      padding: 26px 0 32px;
+      text-align: center;
+      color: #789092;
+      font-size: .8rem;
+    }
+    footer a { color: var(--brand); font-weight: 900; }
+    .designer { margin-top: 7px; }
+
+    .floating-actions {
+      position: fixed;
+      z-index: 20;
+      left: 17px;
+      bottom: 18px;
+      display: grid;
+      gap: 10px;
+    }
+    .float-btn {
+      position: relative;
+      width: 54px;
+      height: 54px;
+      display: grid;
+      place-items: center;
+      border-radius: 50%;
+      color: white;
+      font-size: 1.35rem;
+      box-shadow: 0 10px 24px rgba(15,60,58,.23);
+      transition: transform .2s ease;
+    }
+    .float-btn:hover { transform: scale(1.09); }
+    .float-btn::before {
+      content: "";
+      position: absolute;
+      inset: -5px;
+      border: 1px solid currentColor;
+      border-radius: inherit;
+      opacity: .3;
+      animation: pulse 2.3s infinite;
+    }
+    .float-phone { background: var(--brand); }
+    .float-wa { background: #21b866; }
+    @keyframes pulse {
+      0%, 100% { transform: scale(.92); opacity: .26; }
+      50% { transform: scale(1.1); opacity: 0; }
+    }
+
+    @media (max-width: 800px) {
+      .page { width: min(100% - 24px, 620px); }
+      nav { display: none; }
+      .nav { justify-content: center; }
+      .hero { grid-template-columns: 1fr; gap: 38px; padding-top: 32px; }
+      .hero-copy { text-align: center; }
+      .hero-copy > p { margin-inline: auto; }
+      .actions, .hero-note { justify-content: center; }
+      .hero-card, .hero-card img { min-height: 410px; }
+      .hero-art { max-width: 510px; width: 100%; margin: auto; }
+      .stamp { left: 3px; }
+      .service-grid, .review-grid { grid-template-columns: 1fr 1fr; }
+      .features-wrap { grid-template-columns: 1fr; gap: 35px; }
+      .feature-panel { min-height: 300px; }
+      section { padding: 68px 0; }
+    }
+    @media (max-width: 500px) {
+      .topbar-inner { padding: 6px 14px; text-align: center; line-height: 1.45; }
+      .logo-mark { width: 40px; height: 40px; }
+      h1 { font-size: 2.35rem; }
+      .hero { min-height: 0; padding-bottom: 56px; }
+      .hero-copy > p { font-size: .96rem; }
+      .btn { width: 100%; }
+      .actions { display: grid; }
+      .service-grid, .review-grid { grid-template-columns: 1fr; }
+      .hero-card, .hero-card img { min-height: 350px; }
+      .stamp { width: 105px; height: 105px; font-size: .69rem; top: -10px; left: -7px; }
+      .cta { padding: 42px 20px; }
+      .floating-actions { left: 12px; bottom: 13px; }
+      .float-btn { width: 50px; height: 50px; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after { animation-duration: .01ms !important; transition-duration: .01ms !important; }
+    }
+  </style>
+</head>
+<body>
+  <div class="topbar">
+    <div class="topbar-inner"><span class="topbar-dot"></span> معاينة مجانية داخل عسير — اتصل الآن واحجز موعدك</div>
+  </div>
+
+  <header>
+    <div class="page nav">
+      <a class="logo" href="#home" aria-label="عوازل بعسير">
+        <span class="logo-mark" aria-hidden="true"><span>⌂</span></span>
+        <span>عوازل بعسير</span>
+      </a>
+      <nav aria-label="التنقل الرئيسي">
+        <a href="#services">خدماتنا</a>
+        <a href="#why-us">لماذا نحن</a>
+        <a href="#reviews">آراء العملاء</a>
+        <a class="nav-cta" href="tel:0547061678">اتصل بنا</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="home">
+    <section class="page hero">
+      <div class="hero-copy">
+        <span class="eyebrow">خبرة محلية • نتيجة مضمونة</span>
+        <h1>خلّي بيتك <em>أكثر أمانًا</em><br>مع عوازل بعسير</h1>
+        <p>حلول عزل مائي وحراري احترافية تحمي منزلك من التسرب والحرارة، بتنفيذ دقيق ومواد عالية الجودة.</p>
+        <div class="actions">
+          <a class="btn btn-primary" href="tel:0547061678">☎ اتصل الآن <span dir="ltr">0547061678</span></a>
+          <a class="btn btn-whatsapp" href="https://wa.me/966547061678?text=%D9%85%D8%B1%D8%AD%D8%A8%D8%A7%D8%8C%20%D8%A3%D8%B1%D8%BA%D8%A8%20%D8%A8%D8%B7%D9%84%D8%A8%20%D8%AE%D8%AF%D9%85%D8%A9%20%D8%B9%D9%88%D8%A7%D8%B2%D9%84" target="_blank" rel="noopener">◉ واتساب</a>
+        </div>
+        <div class="hero-note">
+          <span class="mini-avatars" aria-hidden="true"><span>م</span><span>ع</span><span>س</span><span>✓</span></span>
+          <span>خدمة موثوقة بتقييم <strong>4.9/5</strong> من عملائنا</span>
+        </div>
+      </div>
+
+      <div class="hero-art">
+        <div class="stamp">عزل<br>يعيش معك<br>سنوات</div>
+        <div class="hero-card">
+          <img src="https://images.unsplash.com/photo-1581578731548-c64695cc6952?auto=format&fit=crop&w=1100&q=85" alt="فريق عمل محترف ينفذ أعمال صيانة وعزل">
+          <div class="photo-label">
+            <strong>حماية تبدأ من السطح</strong>
+            <span>ننفّذها بعناية… وتعيش معك بثقة</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="ticker" aria-label="خدماتنا">
+      <div class="ticker-track">
+        <div class="ticker-group">
+          <span class="ticker-item">عزل مائي</span>
+          <span class="ticker-item">عزل حراري</span>
+          <span class="ticker-item">عزل أسطح</span>
+          <span class="ticker-item">كشف تسربات</span>
+          <span class="ticker-item">ضمان على التنفيذ</span>
+          <span class="ticker-item">خدمة داخل عسير</span>
+        </div>
+        <div class="ticker-group" aria-hidden="true">
+          <span class="ticker-item">عزل مائي</span>
+          <span class="ticker-item">عزل حراري</span>
+          <span class="ticker-item">عزل أسطح</span>
+          <span class="ticker-item">كشف تسربات</span>
+          <span class="ticker-item">ضمان على التنفيذ</span>
+          <span class="ticker-item">خدمة داخل عسير</span>
+        </div>
+      </div>
+    </div>
+
+    <section id="services" class="page">
+      <div class="section-head">
+        <span class="section-kicker">خدماتنا</span>
+        <h2>حلول متكاملة لراحة بالك</h2>
+        <p>نختار الحل المناسب لمبناك، وننفّذه باهتمام من أول معاينة حتى آخر تفصيلة.</p>
+      </div>
+      <div class="service-grid">
+        <article class="service">
+          <div class="service-icon">☔</div>
+          <h3>العزل المائي</h3>
+          <p>حماية الأسطح والخزانات من الرطوبة والتسربات بمواصفات مناسبة للمناخ.</p>
+        </article>
+        <article class="service">
+          <div class="service-icon">☀</div>
+          <h3>العزل الحراري</h3>
+          <p>تقليل انتقال الحرارة واستهلاك التكييف لجو أكثر راحة طوال العام.</p>
+        </article>
+        <article class="service">
+          <div class="service-icon">⌂</div>
+          <h3>عزل الأسطح</h3>
+          <p>طبقات عزل متينة للأسطح والملاحق مع معالجة دقيقة للحواف والفواصل.</p>
+        </article>
+        <article class="service">
+          <div class="service-icon">⌕</div>
+          <h3>كشف التسربات</h3>
+          <p>نحدد مصدر المشكلة بدقة قبل بدء العمل لتوفير الوقت والتكلفة.</p>
+        </article>
+        <article class="service">
+          <div class="service-icon">◈</div>
+          <h3>عزل الخزانات</h3>
+          <p>حلول آمنة لخزانات المياه تمنع التسرب وتحافظ على جودة الخزان.</p>
+        </article>
+        <article class="service">
+          <div class="service-icon">✓</div>
+          <h3>صيانة ومعالجة</h3>
+          <p>إصلاح التشققات ومشاكل الرطوبة وتجهيز السطح قبل العزل.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="why-us" class="page">
+      <div class="features-wrap">
+        <div class="feature-panel">
+          <div class="quote-mark">“</div>
+          <p>شغل نظيف، موعد واضح، ونتيجة تقدر تعتمد عليها.</p>
+          <div class="feature-sign">فريق عوازل بعسير</div>
+        </div>
+        <div>
+          <div class="section-head" style="text-align:right;margin:0 0 28px;">
+            <span class="section-kicker">لماذا نحن؟</span>
+            <h2>نشتغل على التفاصيل التي تحمي بيتك فعلًا</h2>
+            <p>لأن العزل الجيد ليس طبقة تُوضع فقط، بل تنفيذ صحيح من البداية.</p>
+          </div>
+          <div class="feature-list">
+            <div class="feature">
+              <span class="check">✓</span>
+              <div><h3>فحص قبل التنفيذ</h3><p>نعاين السطح ونفهم المشكلة قبل اختيار نوع العزل.</p></div>
+            </div>
+            <div class="feature">
+              <span class="check">✓</span>
+              <div><h3>مواد مناسبة للمكان</h3><p>نستخدم حلولًا عملية تتحمل حرارة وأجواء منطقة عسير.</p></div>
+            </div>
+            <div class="feature">
+              <span class="check">✓</span>
+              <div><h3>التزام ونظافة</h3><p>موعد واضح، فريق محترم، وتسليم مرتب بعد انتهاء العمل.</p></div>
+            </div>
+            <div class="feature">
+              <span class="check">✓</span>
+              <div><h3>ضمان على التنفيذ</h3><p>نقف خلف شغلنا ونوضح لك كل تفاصيل الخدمة قبل البدء.</p></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="reviews" class="reviews">
+      <div class="page">
+        <div class="section-head">
+          <span class="section-kicker">آراء العملاء</span>
+          <h2>تجارب طيبة… وبيوت أكثر راحة</h2>
+          <p>نحرص أن تكون جودة التنفيذ واضحة في كل تقييم.</p>
+        </div>
+        <div class="review-grid">
+          <article class="review">
+            <div class="stars" aria-label="5 نجوم">★★★★★</div>
+            <blockquote>“تعامل راقٍ وسرعة في المعاينة. شرحوا المشكلة ونفذوا العزل بشكل مرتب جدًا.”</blockquote>
+            <div class="reviewer"><span class="reviewer-avatar">أ</span><div><strong>أبو خالد</strong><small>أبها</small></div></div>
+          </article>
+          <article class="review">
+            <div class="stars" aria-label="5 نجوم">★★★★★</div>
+            <blockquote>“النتيجة ممتازة، خصوصًا مع حرارة السطح. الفريق نظيف وملتزم بالوقت.”</blockquote>
+            <div class="reviewer"><span class="reviewer-avatar" style="background:#e39a68">ن</span><div><strong>نورة</strong><small>خميس مشيط</small></div></div>
+          </article>
+          <article class="review">
+            <div class="stars" aria-label="5 نجوم">★★★★★</div>
+            <blockquote>“أنصح بهم. تجاوب سريع على الواتساب وسعر مناسب وشغل يستاهل.”</blockquote>
+            <div class="reviewer"><span class="reviewer-avatar" style="background:#6d8f9b">م</span><div><strong>محمد</strong><small>عسير</small></div></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="page">
+      <div class="cta">
+        <h2>جاهز تحمي بيتك؟</h2>
+        <p>تواصل معنا الآن وخذ استشارتك الأولى لتعرف الحل الأنسب لمكانك.</p>
+        <a class="btn btn-light" href="tel:0547061678">☎ تحدث مع فريقنا الآن</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div>© <span id="year">2026</span> عوازل بعسير — جميع الحقوق محفوظة</div>
+    <div class="designer">تم التصميم بواسطة <a href="https://wa.me/201029095046?text=%D9%85%D8%B1%D8%AD%D8%A8%D8%A7%20%D9%85.%20%D9%86%D8%AC%D9%88%D9%89" target="_blank" rel="noopener">م. نجوى إبراهيم</a></div>
+  </footer>
+
+  <div class="floating-actions" aria-label="تواصل سريع">
+    <a class="float-btn float-phone" href="tel:0547061678" aria-label="اتصال هاتفي" title="اتصال">☎</a>
+    <a class="float-btn float-wa" href="https://wa.me/966547061678?text=%D9%85%D8%B1%D8%AD%D8%A8%D8%A7%D8%8C%20%D8%A3%D8%B1%D8%BA%D8%A8%20%D8%A8%D8%B7%D9%84%D8%A8%20%D8%AE%D8%AF%D9%85%D8%A9%20%D8%B9%D9%88%D8%A7%D8%B2%D9%84" target="_blank" rel="noopener" aria-label="واتساب" title="واتساب">◉</a>
+  </div>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
